@@ -1,0 +1,9 @@
+C:\Users\Maahir\source\repos\TestExam\InterfaceProj\bin\Debug\InterfaceProj.dll
+C:\Users\Maahir\source\repos\TestExam\InterfaceProj\bin\Debug\InterfaceProj.pdb
+C:\Users\Maahir\source\repos\TestExam\InterfaceProj\bin\Debug\Models.dll
+C:\Users\Maahir\source\repos\TestExam\InterfaceProj\bin\Debug\Models.pdb
+C:\Users\Maahir\source\repos\TestExam\InterfaceProj\obj\Debug\InterfaceProj.csprojAssemblyReference.cache
+C:\Users\Maahir\source\repos\TestExam\InterfaceProj\obj\Debug\InterfaceProj.csproj.CoreCompileInputs.cache
+C:\Users\Maahir\source\repos\TestExam\InterfaceProj\obj\Debug\InterfaceProj.csproj.CopyComplete
+C:\Users\Maahir\source\repos\TestExam\InterfaceProj\obj\Debug\InterfaceProj.dll
+C:\Users\Maahir\source\repos\TestExam\InterfaceProj\obj\Debug\InterfaceProj.pdb

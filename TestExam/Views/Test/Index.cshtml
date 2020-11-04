@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    .CG {
+        color: green;
+    }
+</style>
+@using (Html.BeginForm())
+{
+    <input type="hidden" name="values" id="values" />
+
+    <h2>Problem Statment 1: Promotion Engine</h2>
+    <br />
+    <br />
+    <a href="#" onclick="autoFillValue('A')">Scenario A</a> @:&nbsp;&nbsp;<a href="#" onclick="autoFillValue('B')">Scenario B</a>&nbsp;&nbsp;<a href="#" onclick="autoFillValue('C')">Scenario C</a><br /><br />
+    <div id="divItemType">
+        Item A Qty : <input type="number" onkeydown="if(event.key==='.'){event.preventDefault();}" value="" placeholder="Number only" id="txtItemA" /><br /><br />
+        Item B Qty : <input type="number" onkeydown="if(event.key==='.'){event.preventDefault();}" value="" placeholder="Number only" id="txtItemB" /><br /><br />
+        Item C Qty : <input type="number" onkeydown="if(event.key==='.'){event.preventDefault();}" value="" placeholder="Number only" id="txtItemC" /><br /><br />
+        Item D Qty : <input type="number" onkeydown="if(event.key==='.'){event.preventDefault();}" value="" placeholder="Number only" id="txtItemD" /><br /><br />
+        <input id='btnSubmit' onclick="Valid()" type='submit'>
+    </div>
+    <br />
+    if (!string.IsNullOrEmpty(Convert.ToString(ViewBag.Total)))
+    {
+        @:<b class="CG">Total Price :  @Convert.ToString(ViewBag.Total) </b>
+    }
+
+}
+
+<script>
+    function autoFillValue(fillValue) {
+
+        if (fillValue == "A") {
+            document.getElementById('txtItemA').value = "1";
+            document.getElementById('txtItemB').value = "1";
+            document.getElementById('txtItemC').value = "1";
+            document.getElementById('txtItemD').value = "";
+        }
+        else if (fillValue == "B") {
+            document.getElementById('txtItemA').value = "5";
+            document.getElementById('txtItemB').value = "5";
+            document.getElementById('txtItemC').value = "1";
+            document.getElementById('txtItemD').value = "";
+        }
+        else if (fillValue == "C") {
+            document.getElementById('txtItemA').value = "3";
+            document.getElementById('txtItemB').value = "5";
+            document.getElementById('txtItemC').value = "1";
+            document.getElementById('txtItemD').value = "1";
+        }
+    }
+    function Valid() {
+        var itemTypes = [];
+        var itemA = document.getElementById('txtItemA').value;
+        var itemB = document.getElementById('txtItemB').value;
+        var itemC = document.getElementById('txtItemC').value;
+        var itemD = document.getElementById('txtItemD').value;
+        var isQty = false;
+        if (itemA) {
+            itemTypes.push({ "Item": "A", "Qty": parseInt(itemA) });
+            isQty = true;
+        }
+        if (itemB) {
+            itemTypes.push({ "Item": "B", "Qty": parseInt(itemB) });
+            isQty = true;
+        }
+        if (itemC) {
+            itemTypes.push({ "Item": "C", "Qty": parseInt(itemC) });
+            isQty = true;
+        }
+        if (itemD) {
+            itemTypes.push({ "Item": "D", "Qty": parseInt(itemD) });
+            isQty = true;
+        }
+        if (!isQty) {
+            document.getElementById('txtItemA').focus();
+        }
+        document.getElementById('values').value = JSON.stringify(itemTypes);
+        return isQty;
+    }
+
+</script>
+
+
