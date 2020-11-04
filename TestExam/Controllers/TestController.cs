@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
+using TestExam.Class;
 using TestExam.Models;
 
 namespace TestExam.Controllers
@@ -28,7 +29,7 @@ namespace TestExam.Controllers
                 Orders objOrder = new Orders(1, GetItemByQty(objOrdDetail));
                 PromoCalculator objPromoCal = new PromoCalculator();
 
-                List<decimal> promoprices = CommonMethod.GetPromoList()
+                List<decimal> promoprices = CommonMethods.GetPromotionList()
                      .Select(promo => objPromoCal.GetPromByOrders(objOrder, promo))
                      .ToList();
 
