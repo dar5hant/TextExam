@@ -20,7 +20,7 @@
         Item B Qty : <input type="number" onkeydown="if(event.key==='.'){event.preventDefault();}" value="" placeholder="Number only" id="txtItemB" /><br /><br />
         Item C Qty : <input type="number" onkeydown="if(event.key==='.'){event.preventDefault();}" value="" placeholder="Number only" id="txtItemC" /><br /><br />
         Item D Qty : <input type="number" onkeydown="if(event.key==='.'){event.preventDefault();}" value="" placeholder="Number only" id="txtItemD" /><br /><br />
-        <input id='btnSubmit' onclick="Valid()" type='submit'>
+        <input id='btnSubmit' onclick="return Valid()" type='submit'>
     </div>
     <br />
     if (!string.IsNullOrEmpty(Convert.ToString(ViewBag.Total)))

@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using TestExam.Class;
-using TestExam.Models;
+ 
 
 namespace TestExam.Controllers
 {
